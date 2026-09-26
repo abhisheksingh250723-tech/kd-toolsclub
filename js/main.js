@@ -1,31 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const menuButton =
-        document.querySelector(".menu-btn");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
-    const navigation =
-        document.querySelector(".nav-links");
-
-
-    if (menuButton && navigation) {
-
-        menuButton.addEventListener("click", function () {
-
-            navigation.classList.toggle("open");
-
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", function () {
+            mainNav.classList.toggle("active");
         });
-
     }
 
+    const yearElements = document.querySelectorAll(".year");
 
-    const year =
-        document.getElementById("year");
-
-    if (year) {
-
-        year.textContent =
-            new Date().getFullYear();
-
-    }
+    yearElements.forEach(function (element) {
+        element.textContent = new Date().getFullYear();
+    });
 
 });
